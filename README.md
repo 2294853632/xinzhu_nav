@@ -21,8 +21,8 @@ git submodule update --init
 cd ../..
 catkin_make
 source devel/setup.bash
-# 注意，如果使用的是mid360，即使用的是livox_ros_driver2而非1的话，
-# 需要前往fast-lio的CmakeLists文件修改find_package里的livox_ros_driver为livox_ros_driver2，同时package.xml里面的也一样
+#注意，如果使用的是mid360，即使用的是livox_ros_driver2而非1的话，
+#需要前往fast-lio的CmakeLists文件修改find_package里的livox_ros_driver为livox_ros_driver2，同时package.xml里面的也一样
 
 # 安装sophus
 git clone https://github.com/strasdat/Sophus.git
@@ -49,8 +49,8 @@ roslaunch livox_ros_driver2 msg_MID360.launch
 roslaunch fast_lio_localization localization_MID360.launch 
 # 发布初始位姿(也可以用rviz，第一次尝试的时候更建议使用rviz)
 rosrun fast_lio_localization publish_initial_pose.py 0 0 0 0 0 0
-# also you could publish your initial point use RVIZ
-# 这里的原点是你建图时候的起点。
+also you could publish your initial point use RVIZ
+ 这里的原点是你建图时候的起点。
 
 地图转换主要是因为move_base是基于2d的栅格地图进行路径规划，而fast_lio默认的输出地图是三维点云的PCD文件，我们需要用一些方法获取2d的栅格地图：
 sudo apt install ros-noetic-map-server
@@ -82,7 +82,7 @@ rosrun map_server map_saver map:=/<Map Topic> -f PATH_TO_YOUR_FILE/mymap
 #eg，举例:
 rosrun map_server map_saver map:=/projected_map -f /home/rm/ws_sentry/src/FAST_LIO/PCD/scans
 
-坐标系映射
+# 坐标系映射
 
 input：body frame，即机器人在三维点云坐标系下的位姿
 output: body_2d frame，即机器人在二维栅格地图坐标系下的位姿
