@@ -1,0 +1,5 @@
+<launch>
+    <!-- <param name="targetPoints0_x" type="double" value="3.0"/>
+    <param name="targetPoints0_y" type="double" value="0.5"/> -->
+    <node pkg="send_goal" type="send_goal" name="send_goal" output="screen"/>
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+    <param name="cmd_vel_topic" type="string" value="cmd_vel"/>
+    <param name="dev_name" type="string" value="/dev/ttyUSB0"/>
+    <node pkg="sentry_serial" type="sentry_serial" name="sentry_serial" output="screen" 
+    args="/dev/ttyUSB0"/>
+	
+</launch>
